@@ -21,10 +21,15 @@ app.use(morgan("tiny"));
 
 const mongoUri = "mongodb://localhost:27017/WoofDatabase";
 
-mongoose.connect(mongoUri, {
-  useNewUrlParser: true
-  // useUnifiedTopology: true
-});
+mongoose
+  .connect(mongoUri)
+  .then(() => console.log("Connected to MongoDB..."))
+  .catch((err) => console.error("Error connecting to MongoDB:", err));
+
+// mongoose.connect(mongoUri, {
+//   useNewUrlParser: true
+//   // useUnifiedTopology: true
+// });
 
 mongoose.connection.on("connected", () => {
   console.log("Connected to MongoDB...");

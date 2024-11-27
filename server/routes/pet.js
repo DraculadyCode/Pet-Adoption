@@ -58,7 +58,7 @@ router.post(
   petController.create
 );
 
-router.post(
+router.put(
   "/update/:id",
   upload.fields([
     {

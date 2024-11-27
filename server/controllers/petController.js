@@ -1,5 +1,7 @@
 const Pet = require("../models/Pet");
 const fs = require("fs");
+const path = require("path");
+
 exports.getAll = async (req, res) => {
   try {
     const pets = await Pet.find();
@@ -117,7 +119,7 @@ exports.update = async (req, res) => {
       },
       { new: true }
     );
-    res.json({ message: "Pet created!", updatedPet });
+    res.json({ message: "Pet updated!", updatedPet });
   } catch (error) {
     console.log(error);
     res.status(400).json(error);
