@@ -73,4 +73,8 @@ router.put(
   petController.update
 );
 
+
+router.delete("/delete/:id", petController.delete);
+
+
 module.exports = router;

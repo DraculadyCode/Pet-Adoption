@@ -125,3 +125,20 @@ exports.update = async (req, res) => {
     res.status(400).json(error);
   }
 };
+
+exports.delete = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const existingPet = await Pet.findById(id);
+
+    if(!existingPet) {
+      return res.status(404).json({ message: "Record does not exist!" });
+    }
+
+    const deletedPet = await Pet.findByIdAndDelete(id);
+    res.json({ message: "Deleted!", deletedPet });
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
