@@ -2,7 +2,7 @@
 
 install:
 npm init -y
-npm express mongoose multer cors nodemon
+npm express mongoose multer cors nodemon morgan
 
 Mongo:
 sudo systemctl restart mongod

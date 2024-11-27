@@ -39,6 +39,10 @@ const upload = multer({
 
 //additional images - multiple - 5 limit
 
+router.get("/all", petController.getAll);
+
+router.get("/get/:id", petController.getOne);
+
 router.post(
   "/create",
   upload.fields([
@@ -52,6 +56,21 @@ router.post(
     }
   ]),
   petController.create
+);
+
+router.post(
+  "/update/:id",
+  upload.fields([
+    {
+      name: "image",
+      maxCount: 1
+    },
+    {
+      name: "additionalImages",
+      maxCount: 5
+    }
+  ]),
+  petController.update
 );
 
 module.exports = router;
