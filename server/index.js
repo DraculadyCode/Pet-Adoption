@@ -31,13 +31,13 @@ mongoose
 //   // useUnifiedTopology: true
 // });
 
-mongoose.connection.on("connected", () => {
-  console.log("Connected to MongoDB...");
-});
+// mongoose.connection.on("connected", () => {
+//   console.log("Connected to MongoDB...");
+// });
 
-mongoose.connection.on("error", (err) => {
-  console.log("Error connecting to MongoDB:", err);
-});
+// mongoose.connection.on("error", (err) => {
+//   console.log("Error connecting to MongoDB:", err);
+// });
 
 const PORT = 8002;
 app.listen(PORT, () => {
