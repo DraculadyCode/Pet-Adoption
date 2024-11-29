@@ -22,7 +22,9 @@ app.use("/api/adoption", adoptionRoutes);
 app.use("/public", express.static(path.join(__dirname, "public")));
 app.use(morgan("tiny"));
 
-const mongoUri = "mongodb://localhost:27017/WoofDatabase";
+// const mongoUri = "mongodb://localhost:27017/WoofDatabase";
+const mongoUri =
+  "mongodb+srv://kathrinpeled:test@cluster0.xbtfe.mongodb.net/WoofDatabase?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose
   .connect(mongoUri)
